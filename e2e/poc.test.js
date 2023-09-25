@@ -26,7 +26,7 @@ test('pocのシナリオをテストする', async ({ page }) => {
     await purchase(page, params)
 
     // ログアウト
-    // await logout(page)
+    await logout(page)
 
     // 404
     await not_found(page, params)
@@ -91,9 +91,27 @@ async function login(page, params) {
     await expect(token).not.toContainText('未ログイン');
 }
 
-// todo
-async function logout(page) {
-
+/**
+ * ログアウト機能のテスト
+ * @param page
+ * @returns {Promise<void>}
+ */
+async function logout(page) { 
+    // ログイン画面へ遷移する
+    await page.getByRole('link', {name: 'ログイン'}).getByRole('button').click();
+    await expect(page.url()).toBe(CLIENT_URL + '/mypage/login');
+    
+    // ログアウトボタンをクリック
+    await page.getByRole('button', {name: 'ログアウト'}).click();
+    const token = await page.locator('text=現在のセッショントークン');
+    
+    // 未ログインになっていることを確認
+    await expect(token).toContainText('未ログイン');
+    
+    // oAuthCredentialsが削除されていることを確認
+    const JWTSessionKey = await page.evaluate(() => JSON.stringify(window.localStorage.getItem('oAuthCredentials')));
+    // https://stackoverflow.com/a/41813719 によると、null結果があっても、toBeFlasy()は成功しない
+    expect(JWTSessionKey).toBe("null");
 }
 
 async function purchase(page, params) {
