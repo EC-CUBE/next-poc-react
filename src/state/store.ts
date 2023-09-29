@@ -27,7 +27,9 @@ export default function configureStore(REDUX_INITIAL_DATA: any | undefined) {
     middlewares.push(sagaMiddleware);
     
     // ECCUBE自作ミドルウェアを追加
-    middlewares.push(MiddlewareHub.ErrorOrganizationMiddleware);
+    for (const middleware of MiddlewareHub) {
+        middlewares.push(middleware);
+    }
     
     const rootReducer = combineReducers(reducers);
 

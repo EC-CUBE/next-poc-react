@@ -8,10 +8,12 @@
  * 例: https://github.com/alexnm/re-ducks#operations (英語)
  * ////////////////////////////////////////////////////////
  */
+import actions from "./actions";
 
+const turnOnline = actions.turnOnline
 
 const operations = {
-    
+    turnOnline
 }
 
 export default operations;

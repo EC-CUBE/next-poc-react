@@ -9,10 +9,18 @@
  * //////////////////////////////////////////////////////////////
  */
 export const SITE_HEALTH_404_ERROR: string = "SITE_HEALTH_404_ERROR";
-
+export const SITE_HEALTH_SITE_HISTORY_ADD: string = "SITE_HEALTH_SITE_HISTORY_ADD";
+export const SITE_HEALTH_REQUEST_ONLY_SITE_HISTORY_ADD: string = "SITE_HEALTH_REQUEST_ONLY_SITE_HISTORY_ADD";
+export const SITE_HEALTH_TURN_OFFLINE: string = "SITE_HEALTH_TURN_OFFLINE";
+export const SITE_HEALTH_TURN_ONLINE: string = "SITE_HEALTH_TURN_ONLINE";
 
 const types = {
-    SITE_HEALTH_404_ERROR
+    SITE_HEALTH_404_ERROR,
+    SITE_HEALTH_SITE_HISTORY_ADD,
+    SITE_HEALTH_REQUEST_ONLY_SITE_HISTORY_ADD,
+    
+    SITE_HEALTH_TURN_OFFLINE,
+    SITE_HEALTH_TURN_ONLINE
 }
 
 export default types;

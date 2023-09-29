@@ -1,7 +1,9 @@
+import eccubeReduxEventHistory from "./EccubeReduxEventHistory";
 import ErrorOrganizationMiddleware from "./ErrorOrganizationMiddleware";
 
-const EccubeMiddlewareHub = {
+const EccubeMiddlewareHub = [
+    eccubeReduxEventHistory,
     ErrorOrganizationMiddleware
-}
+]
 
 export default EccubeMiddlewareHub

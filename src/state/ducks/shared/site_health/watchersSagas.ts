@@ -1,5 +1,6 @@
 import {takeLeading} from "redux-saga/effects";
 import types from "./types";
+import { turnOnline } from "./sagas";
 
 /**
  * //////////////////////////////////////////
@@ -10,5 +11,5 @@ import types from "./types";
  * ////////////////////////////////////////////
  */
 export function* fetchRequests() {
-    
+    yield takeLeading(types.SITE_HEALTH_TURN_ONLINE, turnOnline);
 }

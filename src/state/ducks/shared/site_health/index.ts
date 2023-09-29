@@ -11,7 +11,7 @@
 import * as watchersSagas from './watchersSagas';
 
 export const siteHealthSagaWatchers = Object.values(watchersSagas);
-// export {default as siteHealthSelectors} from "./selectors";
+export {default as siteHealthSelectors} from "./selectors";
 export {default as siteHealthOperations} from "./operations";
 export {default as siteHealthTypes} from "./types";
 // export {default as siteHealthForms} from "./forms"

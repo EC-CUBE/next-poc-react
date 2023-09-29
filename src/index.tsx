@@ -13,6 +13,7 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import EccubeSessionContainer from "./views/containers/share/EccubeSessionManager";
 import EccubeErrorCatcherContainer from "./views/containers/share/EccubeErrorCatcherContainer";
+import EccubeOfflineMode from "./views/containers/share/EccubeOfflineMode";
 
 /***
  * /////////////////////////////////////
@@ -61,7 +62,9 @@ root.render(
             <BrowserRouter>
                 <EccubeErrorCatcherContainer>
                     <EccubeSessionContainer>
-                        <App/>
+                        <EccubeOfflineMode>
+                            <App/>
+                        </EccubeOfflineMode>
                     </EccubeSessionContainer>
                 </EccubeErrorCatcherContainer>
             </BrowserRouter>
